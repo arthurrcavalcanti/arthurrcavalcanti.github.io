@@ -1,0 +1,328 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1em;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.titulo-secao {
+    font-size: 2.5rem;
+    margin: 2rem 0;
+    text-align: center;
+    color: #333;
+    position: relative;
+}
+
+.titulo-secao::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: .05em;
+    background-color: #e67e22;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.botao {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #e67e22;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+}
+
+.botao:hover {
+    background-color: #d35400;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.botao-pequeno {
+    padding: 8px 15px;
+    font-size: 0.8rem;
+}
+
+.cabecalho {
+    background-color: white;
+    border-bottom: 2px solid #e67e22;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.cabecalho .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5em;
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+    color: #e67e22;
+    font-weight: bold;
+}
+
+.lista-navegacao {
+    display: flex;
+    gap: 2em;
+}
+
+.lista-navegacao a {
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.lista-navegacao a:hover {
+    color: #e67e22;
+}
+
+.botao-menu-mobile {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #333;
+}
+
+/* Secção Hero */
+.destaque {
+    padding: 80px 0;
+    background-color: #f5f5f5;
+}
+
+.destaque .container {
+    display: flex;
+    align-items: center;
+    gap: 2em
+}
+
+.conteudo-destaque {
+    flex: 1;
+}
+
+.conteudo-destaque h2 {
+    font-size: 3rem;
+    margin-bottom: 2em;
+    line-height: 1.2;
+    color: #333333;
+}
+
+.conteudo-destaque p {
+    font-size: 1.2rem;
+    margin-bottom: 2em;
+    color: #757575;
+}
+
+.imagem-destaque {
+    flex: 1;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Galeria */
+.galeria {
+    background: white;
+    padding: 2em;
+}
+
+.grade-galeria {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Sobre */
+.sobre {
+    padding-top: 2em;
+    display: flex;
+    gap: 1em;
+    align-items: center;
+    justify-content: center;
+}
+
+.imagem-sobre {
+    
+    display: flex;
+    gap: 2em;
+    align-items: center;
+    justify-content: center;
+}
+
+.conquistas {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
+}
+
+.conquista {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.contato {
+    margin-bottom:4em;
+    padding-top: 2em;
+    background: white;
+}
+.info-contato {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1em;
+}
+
+.contatos {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+
+.item-contato {
+    display: flex;
+    align-items: center;
+    gap: .5em;
+}
+
+.redes-sociais {
+    margin-bottom: 1em;
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+
+.formulario-contato {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 1em;
+}
+
+.grupo-formulario {
+    display:flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.contato input {
+    height: 2.5em;
+    width: 100%;
+    padding: .5em;
+}
+
+textarea {
+    width: 100%;
+    padding: .5em;
+}
+
+.lista-navegacao.active {
+    display: flex !important;
+}
+
+@media screen and (max-width: 768px) {
+    .botao-menu-mobile {
+        display: block;
+        z-index: 20;
+        padding: 5px;
+    }
+    
+    .lista-navegacao {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(255, 255, 255, 0.95);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .lista-navegacao li {
+        margin: 15px 0;
+    }
+    
+    .lista-navegacao a {
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+    
+    .destaque .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .conteudo-destaque h2 {
+        font-size: 2.2rem;
+    }
+    
+    .sobre {
+        flex-direction: column;
+    }
+    
+    .conquistas {
+        flex-direction: column;
+    }
+    
+    
+    .contatos {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .conteudo-destaque h2 {
+        font-size: 1.8rem;
+    }
+    
+    .titulo-secao {
+        font-size: 2rem;
+    }
+}
