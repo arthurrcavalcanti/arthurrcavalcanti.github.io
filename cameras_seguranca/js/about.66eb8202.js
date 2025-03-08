@@ -1,2 +1,0 @@
-"use strict";(self["webpackChunkcameras_frontend"]=self["webpackChunkcameras_frontend"]||[]).push([[594],{709:function(n,a,e){e.r(a),e.d(a,{default:function(){return f}});var r=e(641);const t={class:"about"};function u(n,a){return(0,r.uX)(),(0,r.CE)("div",t,a[0]||(a[0]=[(0,r.Lk)("h1",null,"This is an about page",-1)]))}var s=e(262);const c={},o=(0,s.A)(c,[["render",u]]);var f=o}}]);
-//# sourceMappingURL=about.66eb8202.js.map
