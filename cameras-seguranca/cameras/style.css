@@ -1,0 +1,111 @@
+/* Global Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #f5f5f5;
+    background-color: #333;
+    padding: 20px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.folder-header {
+    max-width: 30em;
+    border-radius: 0.5em;
+    background-color: #444;
+    padding: 1em;
+    margin: 1em 0;
+    cursor: pointer;
+}
+.folder-header summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.folder-header .video-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0.5em;
+    margin: 0.5em 0;
+    border-radius: 0.5em;
+    background-color: #333;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+
+/* Loading/Error Messages */
+#loading,
+#error {
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+    margin-top: 50px;
+}
+
+/* Modal */
+.modal {
+    position: fixed; /* Sit on top of the page */
+    z-index: 1; /* Ensure it is above other content */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full screen */
+    height: 100%; /* Full screen */
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent black background */
+    overflow: auto; /* Enable scrolling if content is larger than screen */
+    padding-top: 60px; /* Space at the top */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: rgba(0, 0, 0, 0.8);
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 70%; /* Adjust the width of the modal */
+    max-width: 800px; /* Limit the width */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Close Button */
+.close-button {
+    color: #aaa;
+    font-size: 36px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #000;
+    text-decoration: none;
+}
+
+/* Video Player */
+#video-player {
+    width: 100%; /* Make video player full width */
+    height: auto;
+    max-height: 500px; /* Limit the height of the video */
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+/* Video Metadata */
+#video-metadata {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+}

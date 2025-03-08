@@ -5,6 +5,14 @@ const AUTH_PASSWORD = 'admin';  // Replace with your actual password
 * Fetches the list of videos from the backend
 * @returns {Promise<Array>} Promise resolving to the video list
 */
+function formatBytes(bytes, decimals = 2) {
+    if (bytes === 0) return '0 Bytes';
+    const k = 1024;
+    const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
+    const i = Math.floor(Math.log(bytes) / Math.log(k));
+    return `${parseFloat((bytes / Math.pow(k, i)).toFixed(decimals))} ${sizes[i]}`;
+}
+
 export const getVideoList = async () => {
     try {
         console.log('Initiating API fetch request to:', `${API_BASE_URL}/list-videos`);
@@ -61,6 +69,7 @@ export const getVideoList = async () => {
                     // Create a folder object
                     const folder = {
                         path: directory.path,
+                        type: directory.type,
                         name: directory.name,
                         videos: []
                     };
@@ -72,11 +81,14 @@ export const getVideoList = async () => {
                             folder.videos.push({
                                 path: video.path,
                                 name: video.name,
-                                size: video.size, // Use sizeBytes for numeric size value
+                                type: video.type,
+                                size: formatBytes(video.size), // Use sizeBytes for numeric size value
                                 created: video.created,
                                 modified: video.modified // Changed from lastModified to modified
                             });
                         });
+
+                        folder.videos = folder.videos.reverse(); // Reverse the order of videos
                     }
                     
                     transformedData.push(folder);
