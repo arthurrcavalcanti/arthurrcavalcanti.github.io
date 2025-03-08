@@ -22,7 +22,9 @@ export const getVideoList = async () => {
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
-                'Authorization': 'Basic ' + btoa(`${AUTH_USERNAME}:${AUTH_PASSWORD}`)
+                'Authorization': 'Basic ' + btoa(`${AUTH_USERNAME}:${AUTH_PASSWORD}`),
+                'Origin': 'http://127.0.0.1:5500',
+                'Referer': 'http://127.0.0.1:5500'
             },
             credentials: 'include'
         });
