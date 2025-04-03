@@ -1,40 +1,114 @@
-@import url("https://cdn.jsdelivr.net/npm/@xz/fonts@1/serve/cascadia-code.min.css");
-
-
 * {
-    font-family: 'Cascadia Code', sans-serif;
-    font-size: 100%;
+    box-sizing: border-box;
+}
+
+:root {
+    --slider-value: 172;
+
+    --base: hsl(var(--slider-value), 100%, 29%);
+
+    --primary-base:hsl(231, 100%, 50%);
+    --surface-base:hsl(231, 30%, 96%);
+    --text-base:hsl(231, 20%, 15%);
+
+    --base-muted: color-mix(in oklab, var(--base) 80%, var(--surface-base));
+    --base-darker: color-mix(in oklab, var(--base) 80%, var(--text-base));
+
+    @media (prefers-color-scheme: dark){
+        --surface-base: hsl(234, 57%, 16%);
+        --text-base: hsl(231, 20%, 85%);
+    }
 }
 
 body {
-    background-color: #e3e3e3;
-    min-width: 800px;
+    background: var(--base-muted);
+    font-family: monospace;
+    font-size: 1.2rem;
 }
 
-header {
-    padding: 2rem 2rem;
-    background-color: rgb(132, 255, 255);
-    width: 100%;
-}
-footer {
-    position: absolute;
-    bottom: 0;
-    padding: .5rem 2rem;
-    width: 100%;
-}
-
-section {
-    padding: 2rem 2rem;
+.wrapper {
+    max-inline-size: 1000px;
+    min-inline-size: 350px;
+    background: var(--surface-base);
+    color: var(--text-base);
+    padding-block: .5rem;
+    padding-inline: 1rem;
+    margin-block: .5rem;
+    margin-inline: auto;
+    border-radius: 0.5rem;
 }
 
-.card {
-    padding: 1rem;
-    background-color: rgb(196, 196, 196);
-    width: fit-content;
-    width: -moz-fit-content;
-    margin-bottom: 1rem;
+.pictures {
+    display: grid;
+    gap: 1em;
+    & img {
+        max-inline-size: 100%;
+        max-block-size: 25rem;
+        border: 2px solid var(--base-darker);
+        margin-inline: auto;
+    }
+
+    
 }
 
-.card>p {
-    color: rgb(236, 236, 236);
+@media (width > 700px) {
+    body {
+        font-size: 1rem;
+    }
+    .pictures:has(:not(:only-child)) {
+        grid-template-columns: auto auto;
+    }
+}
+
+h1, h2 {
+  color: var(--base-darker);  
+}
+
+h1 {
+  margin-block: 0;
+
+  + p {
+    margin: 0
+  }
+}
+
+.color-picker {
+    & input {
+        inline-size: 100%;
+    }
+}
+
+.hell {
+    color: darkred;
+    font-weight: bold;
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.primary-navigation {
+    & ul {
+        user-select: none;
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0;
+
+        & li {
+            cursor: pointer;
+            font-weight: 800;
+            padding-inline: 1rem;
+        }
+
+        & li:is(:hover, :focus-visible) {
+            border-block-end: 2px solid;
+        }
+
+        & a {
+            text-decoration: none;
+            color: inherit;
+        }
+    }
 }

@@ -2,54 +2,44 @@
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/styles.css" />
-
-    <title>Hello, world!</title>
+    <script src="script.js"></script>
+    <title>A day at a time</title>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="index.html">My stuff</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="pages/p5projects.html">p5js_challenges</a>
-                </li>
-                <li class="nav-item">
-                    <span class="nav-link disabled" disabled>arthurrcavalcanti@outlook.com</span>
-                </li>
-            </ul>
+   <header>
+        <div class="wrapper">
+            <div class="title">
+                <div class="main">
+                    <h1>My page</h1>
+                </div>
+                <nav class="primary-navigation">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li title="this link does something, you just don't know what."><a>Extra</a></li>
+                        <li><a href="pages/game1.html">Game 1</a></li>
+                        <li><a href="pages/about.html">About me</a></li>
+                    </ul>
+                </nav>
+            </div>
+            
         </div>
-    </nav>
-    <header>
-        <h1>Welcome to my github page</h1>
-        <p>what r u doing here?</p>
+        <div class="wrapper color-picker">
+            <label id="slider-label" for="slider">choose your color</label>
+            <input id="slider" type="range" min="0" max="235" value="172">
+        </div>
     </header>
-    <section>
-        <hr />
-        <h2>Currently working on...</h2>
-        <div class="list-group">
-            <a class="list-group-item list-group-item-action">surviving</a>
+    <main>
+        
+    </main>
+    <footer> 
+        <div class="wrapper">
+            <p>No idea what I'm doing.</p>
         </div>
-    </section>
-    <footer>
-        <hr />
-        <div>I often find that I'm uncertain about what I'm doing until it's completed.</div>
     </footer>
 
 </body>
